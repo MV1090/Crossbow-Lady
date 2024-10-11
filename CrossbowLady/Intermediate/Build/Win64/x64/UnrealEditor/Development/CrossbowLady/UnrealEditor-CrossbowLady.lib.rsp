@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-CrossbowLady.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\CrossbowLadyEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLady.cpp.obj"
+"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\Default.rc2.res"
+/OUT:"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\UnrealEditor-CrossbowLady.lib"

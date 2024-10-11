@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\mark_\\onedrive - yorkville education company\\documents\\tfs term 5 assignments\\graphics programming 2\\crossbow-lady\\crossbowlady\\source\\crossbowlady\\crossbowlady.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\mark_\\onedrive - yorkville education company\\documents\\tfs term 5 assignments\\graphics programming 2\\crossbow-lady\\crossbowlady\\intermediate\\build\\win64\\x64\\crossbowladyeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\mark_\\onedrive - yorkville education company\\documents\\tfs term 5 assignments\\graphics programming 2\\crossbow-lady\\crossbowlady\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\crossbowlady\\definitions.crossbowlady.h",
+            "c:\\users\\mark_\\onedrive - yorkville education company\\documents\\tfs term 5 assignments\\graphics programming 2\\crossbow-lady\\crossbowlady\\source\\crossbowlady\\crossbowlady.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
