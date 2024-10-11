@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xzioQ1e6eMU=",
+  "dgSpecHash": "TpGw3Lu9Zm0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mark_\\OneDrive - Yorkville Education Company\\Documents\\TFS Term 5 assignments\\Graphics Programming 2\\Crossbow-Lady\\CrossbowLady\\Intermediate\\Build\\BuildRulesProjects\\CrossbowLadyModuleRules\\CrossbowLadyModuleRules.csproj",
+  "projectFilePath": "C:\\Users\\Mark_\\Desktop\\Crossbow-Lady\\CrossbowLady\\Intermediate\\Build\\BuildRulesProjects\\CrossbowLadyModuleRules\\CrossbowLadyModuleRules.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mark_\\.nuget\\packages\\blake3\\0.5.1\\blake3.0.5.1.nupkg.sha512",
     "C:\\Users\\Mark_\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",

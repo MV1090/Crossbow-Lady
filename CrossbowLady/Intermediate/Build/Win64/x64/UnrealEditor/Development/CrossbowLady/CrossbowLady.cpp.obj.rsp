@@ -1,11 +1,11 @@
-"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Source\CrossbowLady\CrossbowLady.cpp"
-/FI"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\CrossbowLadyEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"
-/FI"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\Definitions.CrossbowLady.h"
-/Yu"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\CrossbowLadyEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"
-/Fp"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\CrossbowLadyEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.pch"
-/Fo"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLady.cpp.obj"
-/sourceDependencies "C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLady.cpp.dep.json"
-@"C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLady.Shared.rsp"
+"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Source\CrossbowLady\CrossbowLady.cpp"
+/FI"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\CrossbowLadyEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"
+/FI"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\Definitions.CrossbowLady.h"
+/Yu"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\CrossbowLadyEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"
+/Fp"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\CrossbowLadyEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.pch"
+/Fo"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLady.cpp.obj"
+/sourceDependencies "C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLady.cpp.dep.json"
+@"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLady.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

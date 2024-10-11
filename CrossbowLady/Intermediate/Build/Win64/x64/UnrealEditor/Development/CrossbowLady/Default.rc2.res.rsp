@@ -74,5 +74,5 @@
 /DBUILD_ICON_FILE_NAME="\"..\\Build\\Windows\\Resources\\Default.ico\""
 /DPROJECT_COPYRIGHT_STRING="Fill out your copyright notice in the Description page of Project Settings."
 /DPROJECT_PRODUCT_IDENTIFIER=CrossbowLady
-/fo "C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\Default.rc2.res"
+/fo "C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"

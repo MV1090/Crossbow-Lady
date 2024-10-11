@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CrossbowLadyModuleRules
-build_property.ProjectDir = C:\Users\Mark_\OneDrive - Yorkville Education Company\Documents\TFS Term 5 assignments\Graphics Programming 2\Crossbow-Lady\CrossbowLady\Intermediate\Build\BuildRulesProjects\CrossbowLadyModuleRules\
+build_property.ProjectDir = C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\BuildRulesProjects\CrossbowLadyModuleRules\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrossbowLadyModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cdc565b799d99b654848e1a2ceda85966a33f81")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78a83d8df509e62d45512da9ac101df84636fd85")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrossbowLadyModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrossbowLadyModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
