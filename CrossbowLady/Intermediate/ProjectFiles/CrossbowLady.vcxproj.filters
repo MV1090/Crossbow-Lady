@@ -30,10 +30,10 @@
     <Filter Include="Source\CrossbowLady">
       <UniqueIdentifier>{7D24F8E1-B7B3-3087-8EAD-4BF11EA4B828}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\CrossbowLady\CrossbowLadyGameMode.cpp">
+    <ClCompile Include="..\..\Source\CrossbowLady\CBLady.cpp">
       <Filter>Source\CrossbowLady</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\CrossbowLady\CrossbowLadyGameMode.h">
+    <ClInclude Include="..\..\Source\CrossbowLady\CBLady.h">
       <Filter>Source\CrossbowLady</Filter>
     </ClInclude>
     <None Include="..\..\Source\CrossbowLady\CrossbowLady.Build.cs">
@@ -43,6 +43,12 @@
       <Filter>Source\CrossbowLady</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\CrossbowLady\CrossbowLady.h">
+      <Filter>Source\CrossbowLady</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\CrossbowLady\CrossbowLadyGameMode.cpp">
+      <Filter>Source\CrossbowLady</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\CrossbowLady\CrossbowLadyGameMode.h">
       <Filter>Source\CrossbowLady</Filter>
     </ClInclude>
   </ItemGroup>

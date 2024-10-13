@@ -6,7 +6,17 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/Maps/GameMap.umap",
-				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/Blueprint/BP_CrossbowLadyGameMode.uasset"
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/Blueprint/BP_CrossbowLadyGameMode.uasset",
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/Blueprint/BP_CBLady.uasset",
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/CharacterMesh/GenericMale.uasset",
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/CharacterMesh/GenericMale_PhysicsAsset.uasset",
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/CharacterMesh/GenericMale_Skeleton.uasset",
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/CharacterMesh/lambert2.uasset",
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/CharacterMesh/proxy_geo_body_m.uasset",
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/CharacterMesh/HeroFPP.uasset",
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/CharacterMesh/WorldGridMaterial.uasset",
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/CharacterMesh/HeroFPP_Skeleton.uasset",
+				"C:/Users/Mark_/Desktop/Crossbow-Lady/CrossbowLady/Content/CharacterMesh/HeroFPP_PhysicsAsset.uasset"
 			]
 		}
 	]

@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-CrossbowLady-0002.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\CrossbowLadyEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CBLady.gen.cpp.obj"
+"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLady.init.gen.cpp.obj"
+"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLadyGameMode.gen.cpp.obj"
+"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLady.cpp.obj"
+"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CrossbowLadyGameMode.cpp.obj"
+"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\CBLady.cpp.obj"
+"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\Default.rc2.res"
+/OUT:"C:\Users\Mark_\Desktop\Crossbow-Lady\CrossbowLady\Intermediate\Build\Win64\x64\UnrealEditor\Development\CrossbowLady\UnrealEditor-CrossbowLady-0002.lib"
