@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Logging/StructuredLog.h"
 #include "CrossbowLadyGameMode.generated.h"
 
 /**
@@ -14,6 +15,7 @@ class CROSSBOWLADY_API ACrossbowLadyGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
+public:
 	virtual void StartPlay() override;
 	
 };
