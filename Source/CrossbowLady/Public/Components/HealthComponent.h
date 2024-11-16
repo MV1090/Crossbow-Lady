@@ -19,10 +19,38 @@ public:
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
+	
 
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	
+	UFUNCTION()
+	void Init(float maxHealth);	
 
-		
+	UFUNCTION()
+	void SetHealth(float newHealth);
+
+	UFUNCTION()
+	void Damage(float damage);
+
+	UFUNCTION()
+	void Heal(float healAmount);
+
+	UFUNCTION()
+	bool IsDead();
+
+	UFUNCTION()
+	float GetHealth();
+
+	UFUNCTION()
+	float GetNormalizedHealth();
+	
+private:
+
+	UPROPERTY(BlueprintReadOnly, Category = "Health", meta = (AllowPrivateAccess = true))
+	float Health;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Health", meta = (AllowPrivateAccess = true))
+	float MaxHealth;
 };

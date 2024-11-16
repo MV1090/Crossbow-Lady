@@ -26,13 +26,21 @@ AFPSCharacter::AFPSCharacter()
 	FVector bodyScale = FVector(0.5f, 0.5f, 1.4f)*/;
 	MeshSetUp(Body, "Body", "/Engine/BasicShapes/Cylinder", FVector(-30.0f, 0.0f, -60.0f) , FVector(0.5f, 0.5f, 1.4f));
 	
+	if (!HealthComponent)
+	{
+		HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));		
+	}
+		
 }
 
 // Called when the game starts or when spawned
 void AFPSCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	HealthComponent->Init(StartingHealth);
+
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Health: %f"), HealthComponent->GetHealth()));
 }
 
 // Called every frame
@@ -59,6 +67,11 @@ void AFPSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AFPSCharacter::Fire);
 }
 
+void AFPSCharacter::TakeDamage(float damage)
+{
+	HealthComponent->Damage(damage);
+}
+
 void AFPSCharacter::MoveForward(float value)
 {
 	FVector direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
@@ -74,6 +87,11 @@ void AFPSCharacter::MoveRight(float value)
 void AFPSCharacter::StartJump()
 {
 	bPressedJump = true;
+
+	TakeDamage(10.0f);
+
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Health: %f"), HealthComponent->GetHealth()));
 }
 
 void AFPSCharacter::StopJump()

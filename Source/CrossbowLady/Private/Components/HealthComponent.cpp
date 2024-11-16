@@ -2,6 +2,7 @@
 
 
 #include "Components/HealthComponent.h"
+#include "Math/UnrealMath.h"
 
 // Sets default values for this component's properties
 UHealthComponent::UHealthComponent()
@@ -20,7 +21,6 @@ void UHealthComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
-	
 }
 
 
@@ -30,5 +30,51 @@ void UHealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
+}
+
+void UHealthComponent::Init(float maxHealth)
+{
+	MaxHealth = maxHealth;
+	SetHealth(MaxHealth);
+}
+
+float UHealthComponent::GetHealth()
+{
+	return Health;
+}
+
+float UHealthComponent::GetNormalizedHealth()
+{
+	return FMath::Clamp(Health / MaxHealth, 0, 1);
+}
+
+void UHealthComponent::SetHealth(float newHealth)
+{
+	Health = FMath::Clamp(newHealth, 0, MaxHealth);
+}
+
+void UHealthComponent::Damage(float damage)
+{
+	if (damage > 0)
+	{
+		SetHealth(Health - damage);
+	}		
+}
+
+void UHealthComponent::Heal(float healAmount)
+{
+	if (healAmount > 0)
+	{
+		SetHealth(Health + healAmount);
+	}
+}
+
+bool UHealthComponent::IsDead()
+{
+	if(Health <= 0)
+	    return true;
+
+	else
+		return false;
 }
 

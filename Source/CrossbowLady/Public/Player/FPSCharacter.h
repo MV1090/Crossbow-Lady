@@ -10,6 +10,7 @@
 #include "Camera/CameraComponent.h"
 #include "Engine/StaticMesh.h"
 #include "Projectile/BaseProjectile.h"
+#include "Components/HealthComponent.h"
 #include "FPSCharacter.generated.h"
 
 UCLASS()
@@ -31,6 +32,9 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	UFUNCTION()
+	void TakeDamage(float damage);
 
 	UFUNCTION()
 	void MoveForward(float value);
@@ -61,6 +65,12 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Projectile")
 	TSubclassOf<class ABaseProjectile> ProjectileClass;
+
+	UPROPERTY(EditAnywhere, Category = "Health")
+	UHealthComponent* HealthComponent;
+
+	UPROPERTY(EditAnywhere, Category = "Health")
+	float StartingHealth;
 
 private:
 
