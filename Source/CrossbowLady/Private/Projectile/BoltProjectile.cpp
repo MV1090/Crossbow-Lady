@@ -7,11 +7,14 @@ void ABoltProjectile::ProjectileSetUP()
 {
     Super::ProjectileSetUP();
 
+    if (CollisionComponent) {
+        CollisionComponent->OnComponentBeginOverlap.AddDynamic(this, &ABoltProjectile::OnProjectileOverlap);
+        CollisionComponent->InitSphereRadius(5.0f);
+    }
+
     if (ProjectileMeshComponent)
     {
-        if (CollisionComponent) {
-            CollisionComponent->InitSphereRadius(5.0f);
-
+       
             static ConstructorHelpers::FObjectFinder<UStaticMesh>BoltMeshAsset(TEXT("/Game/Mesh/SM_Arrow.SM_Arrow"));
             if (BoltMeshAsset.Succeeded()) {
                 ProjectileMeshComponent->SetStaticMesh(BoltMeshAsset.Object);            
@@ -27,8 +30,10 @@ void ABoltProjectile::ProjectileSetUP()
             ProjectileMeshComponent->SetupAttachment(RootComponent);
             ProjectileMeshComponent->SetRelativeLocation(FVector(-60.0f, 0.0f, 0.0f));
             ProjectileMeshComponent->SetRelativeRotation(FRotator(-90.0f, 0.0f, 0.0f));
-        }
-
+            
+    }      
+    if (ProjectileMovementComponent)
+    {
         ProjectileMovementComponent->InitialSpeed = BulletSpeed;
         ProjectileMovementComponent->MaxSpeed = BulletSpeed;
         ProjectileMovementComponent->Bounciness = BounceValue;
@@ -38,17 +43,16 @@ void ABoltProjectile::ProjectileSetUP()
     InitialLifeSpan = 3.0f;
 }
 
-void ABoltProjectile::OnProjectileOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void ABoltProjectile::OnProjectileOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+    UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
+    const FHitResult& SweepResult)
 {
     Super::OnProjectileOverlap(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);     
 
     ABaseEnemy* enemy = Cast<ABaseEnemy>(OtherActor);
 
     if(enemy)
-    {
-        if (GEngine)
-            GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Enemy Hit")));
-
+    {       
         enemy->OnTakeDamage(10.0f);
     }
     

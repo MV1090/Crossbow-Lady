@@ -3,6 +3,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Enemy/BaseEnemy.h"
+#include "Runtime/Engine/Public/TimerManager.h"
+#include "Enemy/EnemyController.h"
 #include "TurretEnemy.generated.h"
 
 /**
@@ -17,6 +19,8 @@ public:
 
      ATurretEnemy();
 
+	 virtual void BeginPlay() override;
+
 protected:
 
 public:
@@ -24,6 +28,16 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Mesh")
 	UStaticMeshComponent* Body;
 
+	UFUNCTION()
+	void ResetTarget();
+
 private:
+
+	UFUNCTION()
+	void OnSeePlayer(APawn* Pawn);
+
+	//AEnemyController* AIController;
+
+	FTimerHandle DelayHandle;
 
 };

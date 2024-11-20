@@ -6,6 +6,8 @@
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/Character.h"
 #include "Components/HealthComponent.h"
+#include "BehaviorTree/BehaviorTree.h"
+#include "Perception/PawnSensingComponent.h"
 #include "BaseEnemy.generated.h"
 
 UCLASS()
@@ -33,6 +35,13 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "Health")
 	UHealthComponent* HealthComponent;
+
+	UPROPERTY(EditAnywhere, Category = "AI")
+	class UBehaviorTree* BehaviorTree;
+
+	UPROPERTY(VisibleAnywhere, Category = "AI")
+	class UPawnSensingComponent* PawnSensingComp;
+
 
 private:
 

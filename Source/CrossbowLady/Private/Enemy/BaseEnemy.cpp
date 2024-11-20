@@ -14,6 +14,13 @@ ABaseEnemy::ABaseEnemy()
 		HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
 	}
 
+	if (!PawnSensingComp)
+	{
+		PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComp"));
+
+		PawnSensingComp->SetPeripheralVisionAngle(35.f);
+	}
+
 }
 
 // Called when the game starts or when spawned
@@ -49,9 +56,11 @@ void ABaseEnemy::OnTakeDamage(float Damage)
 {
 	HealthComponent->Damage(Damage);
 
-	if (HealthComponent->IsDead())
-		Destroy();
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Enemy Hit")));
 
+	if(HealthComponent->IsDead())
+	   Destroy();	
 }
 
 // Called to bind functionality to input
