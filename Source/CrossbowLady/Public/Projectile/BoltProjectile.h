@@ -16,9 +16,18 @@ class CROSSBOWLADY_API ABoltProjectile : public ABaseProjectile
 	
 public: 
 
+	UPROPERTY(EditAnywhere, Category = "Movement")
+	float BulletSpeed = 3000;
+
+	UPROPERTY(EditAnywhere, Category = "Movement")
+	float GravityScale = 0.5;
+
+	UPROPERTY(EditAnywhere, Category = "Movement")
+	float BounceValue = 0.3;
+
 	virtual void ProjectileSetUP() override;
 	
-	virtual void OnProjectileHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit) override;
+	virtual void OnProjectileOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) override;
 
 	ABoltProjectile();
 };

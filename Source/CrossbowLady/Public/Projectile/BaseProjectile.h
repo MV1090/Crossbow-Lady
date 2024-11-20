@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+
 #include "BaseProjectile.generated.h"
 
 UCLASS()
@@ -26,14 +27,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	float BulletSpeed = 1000;
-
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	float GravityScale = 1;
-
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	float BounceValue = 0.3;
 
 	UPROPERTY(VisibleDefaultsOnly, Category = "Projectile")
 	USphereComponent* CollisionComponent;
@@ -51,7 +44,7 @@ public:
 	void FireInDirection(const FVector& ShootDirection);
 
 	UFUNCTION()
-	virtual void OnProjectileHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+	virtual void OnProjectileOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	virtual void ProjectileSetUP();
 

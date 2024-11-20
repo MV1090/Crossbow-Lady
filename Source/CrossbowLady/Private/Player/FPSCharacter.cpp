@@ -17,13 +17,8 @@ AFPSCharacter::AFPSCharacter()
 		FPSCameraComponent->SetRelativeLocation(FVector(30.0f, 0.0f, 50.0f));
 		FPSCameraComponent->bUsePawnControlRotation = true;
 	}
-	/*
-	FVector hatPos = FVector(-30.0f, 0.0f, 25.0f);
-	FVector hatScale = FVector(1.0f, 1.0f, 0.5f);*/
-	MeshSetUp(Hat, "Hat", "/Engine/BasicShapes/Cone", FVector(-30.0f, 0.0f, 25.0f), FVector(1.0f, 1.0f, 0.5f));
-	
-	/*FVector bodyPos = FVector(-30.0f, 0.0f, -60.0f);
-	FVector bodyScale = FVector(0.5f, 0.5f, 1.4f)*/;
+
+	MeshSetUp(Hat, "Hat", "/Engine/BasicShapes/Cone", FVector(-30.0f, 0.0f, 25.0f), FVector(1.0f, 1.0f, 0.5f));	
 	MeshSetUp(Body, "Body", "/Engine/BasicShapes/Cylinder", FVector(-30.0f, 0.0f, -60.0f) , FVector(0.5f, 0.5f, 1.4f));
 	
 	if (!HealthComponent)
@@ -112,7 +107,7 @@ void AFPSCharacter::Fire()
 	FVector MuzzleLocation = CameraLocation + FTransform(CameraRotation).TransformVector(MuzzleOffset);
 
 	FRotator MuzzleRotation = CameraRotation;
-	//MuzzleRotation.Pitch += 10.0f;
+	MuzzleRotation.Pitch += 10.0f;
 
 	// Unity Instantiate
 	// 1. Get World we to spawn in
