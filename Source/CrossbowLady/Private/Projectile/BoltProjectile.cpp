@@ -13,14 +13,13 @@ void ABoltProjectile::ProjectileSetUP()
     }
 
     if (ProjectileMeshComponent)
-    {
-       
-            static ConstructorHelpers::FObjectFinder<UStaticMesh>BoltMeshAsset(TEXT("/Game/Mesh/SM_Arrow.SM_Arrow"));
+    {       
+            ConstructorHelpers::FObjectFinder<UStaticMesh>BoltMeshAsset(TEXT("/Game/Mesh/SM_Arrow.SM_Arrow"));
             if (BoltMeshAsset.Succeeded()) {
                 ProjectileMeshComponent->SetStaticMesh(BoltMeshAsset.Object);            
             }
 
-            static ConstructorHelpers::FObjectFinder<UMaterial>BoltMaterial(TEXT("/Game/Projectile/M_Bolt.M_Bolt"));
+            ConstructorHelpers::FObjectFinder<UMaterial>BoltMaterial(TEXT("/Game/Projectile/M_Bolt.M_Bolt"));
             if (BoltMaterial.Succeeded()) {
                 ProjectileMaterialInstance = UMaterialInstanceDynamic::Create(BoltMaterial.Object, ProjectileMeshComponent);
             }
@@ -39,13 +38,10 @@ void ABoltProjectile::ProjectileSetUP()
         ProjectileMovementComponent->Bounciness = BounceValue;
         ProjectileMovementComponent->ProjectileGravityScale = GravityScale;
     }
-
     InitialLifeSpan = 3.0f;
 }
 
-void ABoltProjectile::OnProjectileOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
-    UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
-    const FHitResult& SweepResult)
+void ABoltProjectile::OnProjectileOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
     Super::OnProjectileOverlap(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);     
 
@@ -54,8 +50,14 @@ void ABoltProjectile::OnProjectileOverlap(UPrimitiveComponent* OverlappedCompone
     if(enemy)
     {       
         enemy->OnTakeDamage(10.0f);
-    }
-    
+        
+        if (GEngine)
+            GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Health: %f"), enemy->HealthComponent->GetHealth()));
+
+        if (enemy->HealthComponent->GetHealth()<= 0)
+            OtherActor->Destroy();
+    }    
+
 }
 
 ABoltProjectile::ABoltProjectile()

@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "BehaviorTree/Tasks/BTTask_BlackboardBase.h"
+#include "BehaviorTree/BlackboardComponent.h"
+#include "Player/FPSCharacter.h"
 #include "BTTask_Attack.generated.h"
 
 /**
@@ -14,4 +16,7 @@ class CROSSBOWLADY_API UBTTask_Attack : public UBTTask_BlackboardBase
 {
 	GENERATED_BODY()
 	
+public:
+
+	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 };

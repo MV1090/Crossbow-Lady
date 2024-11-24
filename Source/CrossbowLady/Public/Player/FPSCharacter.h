@@ -1,5 +1,4 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -50,6 +49,9 @@ public:
 
 	UFUNCTION()
 	void Fire();
+
+	UFUNCTION()
+	void OnTakeDamage(float Damage);
 
 	UPROPERTY(EditAnywhere, Category = "Mesh")
 	UStaticMeshComponent* Body;

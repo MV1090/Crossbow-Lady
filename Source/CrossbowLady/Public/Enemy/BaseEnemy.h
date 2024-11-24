@@ -8,6 +8,7 @@
 #include "Components/HealthComponent.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "Perception/PawnSensingComponent.h"
+#include "Components/SceneComponent.h"
 #include "BaseEnemy.generated.h"
 
 UCLASS()
@@ -33,7 +34,8 @@ public:
 	// Called to bind functionality to input
 	//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY(EditAnywhere, Category = "Health")
+	UPROPERTY(EditAnywhere
+		, Category = "Health")
 	UHealthComponent* HealthComponent;
 
 	UPROPERTY(EditAnywhere, Category = "AI")
@@ -42,6 +44,13 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "AI")
 	class UPawnSensingComponent* PawnSensingComp;
 
+
+	UPROPERTY(EditDefaultsOnly, Category = "Projectile")
+	TSubclassOf<class ABaseProjectile> ProjectileClass;
+
+
+	UPROPERTY(EditAnywhere, Category = "Projectile")
+	USceneComponent* SpawnPoint;
 
 private:
 

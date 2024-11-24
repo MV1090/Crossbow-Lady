@@ -126,6 +126,14 @@ void AFPSCharacter::Fire()
 	Projectile->FireInDirection(LaunchDirection);
 }
 
+void AFPSCharacter::OnTakeDamage(float Damage)
+{
+	HealthComponent->Damage(Damage);
+
+	if (HealthComponent->IsDead())
+		Destroy();	
+}
+
 void AFPSCharacter::MeshSetUp(UStaticMeshComponent* mesh, FString viewportName,FString meshToSpawn, FVector location, FVector scale)
 {		
 	mesh = CreateDefaultSubobject<UStaticMeshComponent>(*viewportName);

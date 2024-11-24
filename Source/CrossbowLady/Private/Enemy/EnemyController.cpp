@@ -30,7 +30,6 @@ void AEnemyController::SetSeenTarget(AActor* pawn)
 	if (BlackboardComp)
 	{
 		BlackboardComp->SetValueAsObject("Target", pawn);
-		//BlackboardComp->SetValueAsBool("Target", true);
 	}
 }
 
@@ -50,5 +49,14 @@ void AEnemyController::SetDestination(FVector destination)
 	if (BlackboardComp)
 	{
 		BlackboardComp->SetValueAsVector("NextPos", destination);
+	}
+}
+
+void AEnemyController::SetCanSeePlayer(bool SeePlayer, UObject* Player)
+{
+	UBlackboardComponent* bb = GetBlackboardComponent();
+	bb->SetValueAsBool(FName("Can See Player"), SeePlayer);
+	if (SeePlayer) {
+		bb->SetValueAsObject(FName("Player Target"), Player);
 	}
 }

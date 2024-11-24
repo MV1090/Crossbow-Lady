@@ -35,4 +35,7 @@ public:
 	void ResetTarget();
 
 	void SetDestination(FVector destination);
+
+	UFUNCTION()
+	void SetCanSeePlayer(bool SeePlayer, UObject* Player);
 };

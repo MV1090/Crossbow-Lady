@@ -11,7 +11,8 @@ ABaseEnemy::ABaseEnemy()
 
 	if (!HealthComponent)
 	{
-		HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
+		HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));		
+	
 	}
 
 	if (!PawnSensingComp)
@@ -21,26 +22,31 @@ ABaseEnemy::ABaseEnemy()
 		PawnSensingComp->SetPeripheralVisionAngle(35.f);
 	}
 
+	if (!SpawnPoint)
+	{
+		SpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("SpawnPoint"));
+		SpawnPoint->SetupAttachment(RootComponent);
+	}
+
 }
 
 // Called when the game starts or when spawned
 void ABaseEnemy::BeginPlay()
 {
-	Super::BeginPlay();
-	
+	Super::BeginPlay();	
 }
 
 // Called every frame
 void ABaseEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void ABaseEnemy::MeshSetUp(UStaticMeshComponent* mesh, FString viewportName, FString meshToSpawn, FVector location, FVector scale, FRotator rotation)
 {
 	mesh = CreateDefaultSubobject<UStaticMeshComponent>(*viewportName);
 	mesh->SetupAttachment(RootComponent);
+	
 	ConstructorHelpers::FObjectFinder<UStaticMesh> Asset(*meshToSpawn);
 
 	if (Asset.Succeeded())
@@ -54,13 +60,10 @@ void ABaseEnemy::MeshSetUp(UStaticMeshComponent* mesh, FString viewportName, FSt
 
 void ABaseEnemy::OnTakeDamage(float Damage)
 {
-	HealthComponent->Damage(Damage);
-
-	if (GEngine)
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Enemy Hit")));
+	HealthComponent->Damage(Damage);		
 
 	if(HealthComponent->IsDead())
-	   Destroy();	
+	   Destroy();		
 }
 
 // Called to bind functionality to input
