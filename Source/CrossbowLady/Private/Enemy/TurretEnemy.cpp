@@ -22,26 +22,29 @@ void ATurretEnemy::BeginPlay()
 	}	
 }
 
-void ATurretEnemy::ResetTarget()
-{	
-	AEnemyController* AIController = Cast<AEnemyController>(GetController());
-
-	if (AIController)
-	{
-		AIController->ResetTarget();
-	}
-}
+//void ATurretEnemy::ResetTarget()
+//{	
+//	AEnemyController* AIController = Cast<AEnemyController>(GetController());
+//
+//	if (AIController)
+//	{
+//		AIController->ResetTarget();
+//	}
+//}
 
 void ATurretEnemy::OnSeePlayer(APawn* Pawn)
 {
 	AEnemyController* AIController = Cast<AEnemyController>(GetController());
 	
 	if (AIController)
-	{
-		AIController->SetSeenTarget(Pawn);
+	{	
 
-		GetWorld()->GetTimerManager().ClearTimer(DelayHandle);
-		GetWorld()->GetTimerManager().SetTimer(DelayHandle, this, &ATurretEnemy::ResetTarget, 2.0f, false);			
+		AFPSCharacter* player = Cast<AFPSCharacter>(Pawn);
+		if (!player) return;
+
+		AIController->SetCanSeePlayer(true, player);
+
+		AIController->RunTriggerableTimer();
 	}
 }
 

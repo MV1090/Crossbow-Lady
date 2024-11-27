@@ -9,6 +9,7 @@
 #include "BehaviorTree/BehaviorTree.h"
 #include "Perception/PawnSensingComponent.h"
 #include "Components/SceneComponent.h"
+#include "Player/FPSCharacter.h"
 #include "BaseEnemy.generated.h"
 
 UCLASS()

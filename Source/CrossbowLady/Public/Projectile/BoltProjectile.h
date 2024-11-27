@@ -3,6 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Kismet/GameplayStatics.h"
+#include "Enemy/BaseEnemy.h"
+#include "Enemy/TargetEnemy.h"
+#include "HUD/FPSHUD.h"
 #include "Projectile/BaseProjectile.h"
 #include "BoltProjectile.generated.h"
 

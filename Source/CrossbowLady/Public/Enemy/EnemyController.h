@@ -36,6 +36,10 @@ public:
 
 	void SetDestination(FVector destination);
 
+	FTimerHandle RetriggerableTimerHandle;
+	FTimerDelegate FunctionDelegate;
+	void RunTriggerableTimer();
+
 	UFUNCTION()
 	void SetCanSeePlayer(bool SeePlayer, UObject* Player);
 };

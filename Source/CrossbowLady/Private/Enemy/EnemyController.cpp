@@ -37,7 +37,7 @@ void AEnemyController::ResetTarget()
 {
 	if (BlackboardComp)
 	{		
-		BlackboardComp->SetValueAsObject("Target", nullptr);
+		BlackboardComp->SetValueAsObject("PlayerTarget", nullptr);
 		
 		if (GEngine)
 			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Stop looking at play")));
@@ -52,11 +52,18 @@ void AEnemyController::SetDestination(FVector destination)
 	}
 }
 
+void AEnemyController::RunTriggerableTimer()
+{
+	GetWorld()->GetTimerManager().ClearTimer(RetriggerableTimerHandle);
+	FunctionDelegate.BindUFunction(this, FName("SetCanSeePlayer"), false, GetPawn());
+	GetWorld()->GetTimerManager().SetTimer(RetriggerableTimerHandle, FunctionDelegate, 2.0f, false);
+}
+
 void AEnemyController::SetCanSeePlayer(bool SeePlayer, UObject* Player)
 {
-	UBlackboardComponent* bb = GetBlackboardComponent();
-	bb->SetValueAsBool(FName("Can See Player"), SeePlayer);
+	BlackboardComp->SetValueAsBool(FName("CanSeePlayer"), SeePlayer);
 	if (SeePlayer) {
-		bb->SetValueAsObject(FName("Player Target"), Player);
-	}
+		BlackboardComp->SetValueAsObject(FName("PlayerTarget"), Player);
+	}	
 }
+

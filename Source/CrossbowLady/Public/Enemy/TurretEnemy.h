@@ -28,8 +28,8 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Mesh")
 	UStaticMeshComponent* Body;
 
-	UFUNCTION()
-	void ResetTarget();
+	//UFUNCTION()
+	//void ResetTarget();
 
 private:
 

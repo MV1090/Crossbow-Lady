@@ -10,6 +10,8 @@
 #include "Engine/StaticMesh.h"
 #include "Projectile/BaseProjectile.h"
 #include "Components/HealthComponent.h"
+#include "HUD/FPSHUD.h"
+#include "Kismet/GameplayStatics.h"
 #include "FPSCharacter.generated.h"
 
 UCLASS()
@@ -20,6 +22,12 @@ class CROSSBOWLADY_API AFPSCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	AFPSCharacter();
+
+	UPROPERTY(VisibleDefaultsOnly, Category = "Mesh", meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* Body;
+
+	UPROPERTY(VisibleDefaultsOnly, Category = "Mesh", meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* Hat;
 
 protected:
 	// Called when the game starts or when spawned
@@ -53,11 +61,6 @@ public:
 	UFUNCTION()
 	void OnTakeDamage(float Damage);
 
-	UPROPERTY(EditAnywhere, Category = "Mesh")
-	UStaticMeshComponent* Body;
-
-	UPROPERTY(EditAnywhere, Category = "Mesh")
-	UStaticMeshComponent* Hat; 
 
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* FPSCameraComponent;
@@ -76,9 +79,12 @@ public:
 
 private:
 
+	
 	void MeshSetUp(UStaticMeshComponent* mesh, FString viewportName, FString meshToSpawn,  FVector location, FVector scale);
 
+	UPROPERTY()
 	UMaterial* StoredMaterial;
 
+	UPROPERTY()
 	UMaterialInstanceDynamic* DynamicMaterialInst;
 };

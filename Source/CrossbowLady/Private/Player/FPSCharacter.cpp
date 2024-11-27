@@ -83,8 +83,6 @@ void AFPSCharacter::StartJump()
 {
 	bPressedJump = true;
 
-	TakeDamage(10.0f);
-
 	if (GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Health: %f"), HealthComponent->GetHealth()));
 }
@@ -128,7 +126,12 @@ void AFPSCharacter::Fire()
 
 void AFPSCharacter::OnTakeDamage(float Damage)
 {
+	AFPSHUD* HUD = UGameplayStatics::GetPlayerController(this, 0)->GetHUD<AFPSHUD>();
+	if (!HUD) return;
+		
 	HealthComponent->Damage(Damage);
+
+	HUD->gameWidgetContainer->SetHealthBar(HealthComponent->GetNormalizedHealth());
 
 	if (HealthComponent->IsDead())
 		Destroy();	
@@ -138,6 +141,8 @@ void AFPSCharacter::MeshSetUp(UStaticMeshComponent* mesh, FString viewportName,F
 {		
 	mesh = CreateDefaultSubobject<UStaticMeshComponent>(*viewportName);
 	mesh->SetupAttachment(FPSCameraComponent);
+	mesh->BodyInstance.SetCollisionProfileName(TEXT("NoCollision"));
+
 	ConstructorHelpers::FObjectFinder<UStaticMesh> Asset(*meshToSpawn);
 
 	if (Asset.Succeeded())

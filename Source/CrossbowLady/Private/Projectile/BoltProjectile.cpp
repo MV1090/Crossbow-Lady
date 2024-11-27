@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Projectile/BoltProjectile.h"
-#include "Enemy/BaseEnemy.h"
+
 
 void ABoltProjectile::ProjectileSetUP()
 {
@@ -47,6 +47,8 @@ void ABoltProjectile::OnProjectileOverlap(UPrimitiveComponent* OverlappedCompone
 
     ABaseEnemy* enemy = Cast<ABaseEnemy>(OtherActor);
 
+    ATargetEnemy* target = Cast<ATargetEnemy>(OtherActor);      
+
     if(enemy)
     {       
         enemy->OnTakeDamage(10.0f);
@@ -57,6 +59,16 @@ void ABoltProjectile::OnProjectileOverlap(UPrimitiveComponent* OverlappedCompone
         if (enemy->HealthComponent->GetHealth()<= 0)
             OtherActor->Destroy();
     }    
+
+    if (target)
+    {
+        AFPSHUD* HUD = UGameplayStatics::GetPlayerController(this, 0)->GetHUD<AFPSHUD>();
+        if (!HUD) return;
+
+        HUD->gameWidgetContainer->SetScoreText(target->Points);
+
+        OtherActor->Destroy();
+    }
 
 }
 
