@@ -6,6 +6,8 @@
 #include "GameFramework/HUD.h"
 #include "Engine/Canvas.h"
 #include "GUI/GameHUDWidget.h"
+#include "GUI/MainMenu.h"
+#include "GUI/EndGameScreen.h"
 #include "FPSHUD.generated.h"
 
 /**
@@ -25,10 +27,18 @@ public:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UGameHUDWidget> GameWidget;
 
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UEndGameScreen> EndGameWidget;
+
 	UPROPERTY()
 	UGameHUDWidget* gameWidgetContainer;
 
+	UPROPERTY()
+	UEndGameScreen* EndGameWidgetContainer;
+
 	void ShowGameMenu(TSubclassOf<UGameHUDWidget> newGameWidget);
+	void ShowEndGame(FText endgameText);
 
 protected:
 

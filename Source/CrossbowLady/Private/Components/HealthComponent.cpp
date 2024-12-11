@@ -46,6 +46,14 @@ float UHealthComponent::GetNormalizedHealth()
 	return FMath::Clamp(Health / MaxHealth, 0, 1);
 }
 
+void UHealthComponent::UpdateHUD()
+{
+	AFPSHUD* HUD = UGameplayStatics::GetPlayerController(this, 0)->GetHUD<AFPSHUD>();
+	if (!HUD) return;
+
+	HUD->gameWidgetContainer->SetHealthBar(GetNormalizedHealth());
+}
+
 void UHealthComponent::SetHealth(float newHealth)
 {
 	Health = FMath::Clamp(newHealth, 0, MaxHealth);

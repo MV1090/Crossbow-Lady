@@ -67,6 +67,9 @@ void ABoltProjectile::OnProjectileOverlap(UPrimitiveComponent* OverlappedCompone
 
         HUD->gameWidgetContainer->SetScoreText(target->Points);
 
+        if (HUD->gameWidgetContainer->TargetScoreReached())
+            HUD->ShowEndGame(FText::FromString("Winner"));
+
         OtherActor->Destroy();
     }
 

@@ -65,9 +65,6 @@ void AEnemyBallProjectile::OnProjectileOverlap(UPrimitiveComponent* OverlappedCo
         if (GEngine)
             GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Health: %f"), player->HealthComponent->GetHealth()));
 
-        if (player->HealthComponent->GetHealth() <= 0)
-            OtherActor->Destroy();
-
         Destroy();
     }
 }

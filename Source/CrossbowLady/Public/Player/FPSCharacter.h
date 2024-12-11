@@ -10,8 +10,6 @@
 #include "Engine/StaticMesh.h"
 #include "Projectile/BaseProjectile.h"
 #include "Components/HealthComponent.h"
-#include "HUD/FPSHUD.h"
-#include "Kismet/GameplayStatics.h"
 #include "FPSCharacter.generated.h"
 
 UCLASS()

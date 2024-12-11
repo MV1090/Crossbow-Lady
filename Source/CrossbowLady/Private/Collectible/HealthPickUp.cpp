@@ -27,6 +27,7 @@ void AHealthPickUp::OnCollect()
 	if (player)
 	{
 		player->HealthComponent->Heal(HealthToAdd);
+		player->HealthComponent->UpdateHUD();
 
 		if (GEngine)
 			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Health: %f"), player->HealthComponent->GetHealth()));

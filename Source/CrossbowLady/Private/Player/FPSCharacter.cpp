@@ -2,6 +2,7 @@
 
 
 #include "Player/FPSCharacter.h"
+#include "HUD/FPSHUD.h"
 
 
 // Sets default values
@@ -82,9 +83,6 @@ void AFPSCharacter::MoveRight(float value)
 void AFPSCharacter::StartJump()
 {
 	bPressedJump = true;
-
-	if (GEngine)
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, FString::Printf(TEXT("Health: %f"), HealthComponent->GetHealth()));
 }
 
 void AFPSCharacter::StopJump()
@@ -125,16 +123,18 @@ void AFPSCharacter::Fire()
 }
 
 void AFPSCharacter::OnTakeDamage(float Damage)
-{
-	AFPSHUD* HUD = UGameplayStatics::GetPlayerController(this, 0)->GetHUD<AFPSHUD>();
-	if (!HUD) return;
-		
+{			
 	HealthComponent->Damage(Damage);
 
-	HUD->gameWidgetContainer->SetHealthBar(HealthComponent->GetNormalizedHealth());
-
 	if (HealthComponent->IsDead())
-		Destroy();	
+	{
+		AFPSHUD* HUD = UGameplayStatics::GetPlayerController(this, 0)->GetHUD<AFPSHUD>();
+		if (!HUD) return;
+
+		HUD->ShowEndGame(FText::FromString("Game Over"));
+	}
+
+	HealthComponent->UpdateHUD();
 }
 
 void AFPSCharacter::MeshSetUp(UStaticMeshComponent* mesh, FString viewportName,FString meshToSpawn, FVector location, FVector scale)

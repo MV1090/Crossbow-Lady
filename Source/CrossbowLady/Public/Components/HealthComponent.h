@@ -3,6 +3,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "HUD/FPSHUD.h"
+#include "Kismet/GameplayStatics.h"
 #include "HealthComponent.generated.h"
 
 
@@ -45,6 +47,9 @@ public:
 	UFUNCTION()
 	float GetNormalizedHealth();
 	
+	UFUNCTION()
+	void UpdateHUD();
+
 private:
 
 	UPROPERTY(BlueprintReadOnly, Category = "Health", meta = (AllowPrivateAccess = true))
